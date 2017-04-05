@@ -1,0 +1,10 @@
+--- a/pppd/lcp.c
++++ b/pppd/lcp.c
+@@ -2346,6 +2346,7 @@ LcpSendEchoRequest (f)
+ 
+ 	if (link_stats.pkts_in != last_pkts_in) {
+ 	    last_pkts_in = link_stats.pkts_in;
++	    lcp_echos_pending = 0;
+ 	    return;
+ 	}
+     }
